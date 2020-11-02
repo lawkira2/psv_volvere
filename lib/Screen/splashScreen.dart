@@ -14,9 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   navigator() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }
+
   @override
   void initState() {
     loadtime();
